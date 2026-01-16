@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생회 동계 야유회: 영양 꽁꽁 축제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 폰트 설정 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Jua', sans-serif;
+        }
+
+        /* 눈 내리는 효과 애니메이션 */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            animation: fall linear infinite;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* 글래스모피즘 카드 효과 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        /* 스크롤 애니메이션 클래스 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 타임라인 커스텀 */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-900 text-white min-h-screen relative">
+
+    <!-- 눈 내리는 배경 컨테이너 -->
+    <div id="snow-container" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <main class="relative z-10 max-w-md mx-auto md:max-w-2xl min-h-screen pb-20">
+        
+        <!-- 헤더 섹션 -->
+        <header class="pt-16 pb-10 text-center px-6 reveal active">
+            <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-white/40 animate-bounce">
+                ❄️ 2025 학생회 동계 야유회 ❄️
+            </div>
+            <h1 class="text-5xl md:text-6xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-sky-100 drop-shadow-lg">
+                영양<br>꽁꽁 축제
+            </h1>
+            <p class="text-xl text-sky-100 mt-4 font-light">
+                우리 함께 떠나는 <span class="font-bold text-white">겨울왕국</span> 여행
+            </p>
+        </header>
+
+        <!-- 핵심 정보 카드 -->
+        <section class="px-6 mb-12">
+            <div class="glass-card rounded-3xl p-6 text-center reveal delay-100">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                        <i class="fas fa-calendar-alt text-2xl mb-2 text-sky-300"></i>
+                        <p class="text-sm text-gray-300">날짜</p>
+                        <p class="text-lg font-bold">1월 24일 (토)</p>
+                    </div>
+                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                        <i class="fas fa-clock text-2xl mb-2 text-sky-300"></i>
+                        <p class="text-sm text-gray-300">집합 시간</p>
+                        <p class="text-lg font-bold">오전 10:00</p>
+                    </div>
+                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                        <i class="fas fa-map-marker-alt text-2xl mb-2 text-sky-300"></i>
+                        <p class="text-sm text-gray-300">장소</p>
+                        <p class="text-lg font-bold">영양군 일대</p>
+                    </div>
+                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                        <i class="fas fa-won-sign text-2xl mb-2 text-sky-300"></i>
+                        <p class="text-sm text-gray-300">참가비</p>
+                        <p class="text-lg font-bold">20,000원</p>
+                    </div>
+                </div>
+                
+                <!-- 복장 가이드 추가 -->
+                <div class="mt-6 pt-4 border-t border-white/20 text-left">
+                    <h3 class="text-sky-300 font-bold mb-3 text-center text-lg"><i class="fas fa-tshirt"></i> 복장 & 준비물 꿀팁!</h3>
+                    <div class="bg-blue-900/40 p-4 rounded-xl text-sm leading-relaxed text-gray-200 shadow-inner">
+                        <p class="mb-2">🥶 <strong>강바람이 쌩쌩~</strong><br>꽁꽁 언 강 위라 생각보다 훨씬 추워요!</p>
+                        <p class="mb-2">🏃‍♂️ <strong>활동하기 편하게!</strong><br>스케이트&썰매 타려면 너무 둔하면 힘들어요.<br>두꺼운 패딩 하나보다는 <span class="text-yellow-300 font-bold">얇은 옷을 여러 겹(레이어드)</span> 입는 걸 추천해요.</p>
+                        <p class="mt-3 pt-2 border-t border-white/10 text-center text-sky-200 font-bold">
+                            ✨ 필수템: 장갑, 귀마개, 핫팩, 따뜻한 양말 ✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 타임라인 (스케줄) -->
+        <section class="px-6 mb-16 relative reveal">
+            <h2 class="text-3xl text-center mb-10 font-display text-shadow">🕐 오늘의 일정</h2>
+            
+            <div class="relative">
+                <div class="timeline-line"></div>
+
+                <!-- 10:00 집합 -->
+                <div class="relative mb-8 flex items-center w-full">
+                    <div class="w-1/2 pr-6 text-right">
+                        <h3 class="text-xl font-bold text-sky-200">집합 및 예배</h3>
+                        <p class="text-sm text-gray-200">마음을 모으는 시간</p>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full border-4 border-blue-500 z-10"></div>
+                    <div class="w-1/2 pl-6">
+                        <span class="font-mono text-2xl font-bold text-yellow-300">10:00</span>
+                    </div>
+                </div>
+
+                <!-- 10:30 출발 -->
+                <div class="relative mb-8 flex items-center w-full">
+                    <div class="w-1/2 pr-6 text-right">
+                        <span class="font-mono text-2xl font-bold text-yellow-300">10:30</span>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-300 rounded-full z-10"></div>
+                    <div class="w-1/2 pl-6">
+                        <h3 class="text-xl font-bold">영양으로 출발! 🚌</h3>
+                        <p class="text-sm text-gray-200">김밥 & 생수 제공</p>
+                        <p class="text-xs text-sky-200 mt-1">*휴게소 1회 정차</p>
+                    </div>
+                </div>
+
+                <!-- 13:00 도착 -->
+                <div class="relative mb-8 flex items-center w-full">
+                    <div class="w-1/2 pr-6 text-right">
+                        <h3 class="text-xl font-bold">도착 & 점심식사</h3>
+                        <p class="text-sm text-gray-200">맛있는 밥 먹고 힘내자!</p>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-300 rounded-full z-10"></div>
+                    <div class="w-1/2 pl-6">
+                        <span class="font-mono text-2xl font-bold text-yellow-300">13:00</span>
+                    </div>
+                </div>
+
+                <!-- 13:00 ~ 16:00 노는 시간 -->
+                <div class="relative mb-8 flex items-center w-full">
+                    <div class="w-1/2 pr-6 text-right">
+                        <span class="font-mono text-2xl font-bold text-yellow-300">~ 16:00</span>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white text-blue-600 rounded-full z-10 flex items-center justify-center shadow-lg">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="w-1/2 pl-6">
+                        <h3 class="text-xl font-bold text-sky-200">자유시간 & 액티비티</h3>
+                        <p class="text-sm text-gray-200">스케이트, 썰매, 빙어잡기</p>
+                    </div>
+                </div>
+
+                <!-- 16:00 복귀 -->
+                <div class="relative flex items-center w-full">
+                    <div class="w-1/2 pr-6 text-right">
+                        <h3 class="text-xl font-bold">대구로 출발 🏠</h3>
+                        <p class="text-sm text-gray-200">안전하게 귀가해요</p>
+                    </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-400 rounded-full z-10"></div>
+                    <div class="w-1/2 pl-6">
+                        <span class="font-mono text-2xl font-bold text-yellow-300">16:00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 즐길거리 소개 -->
+        <section class="px-6 mb-16 reveal">
+            <h2 class="text-3xl text-center mb-6 font-display">☃️ 즐길거리 미리보기</h2>
+            <div class="space-y-4">
+                <!-- Activity 1 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center transform transition hover:scale-105 duration-300">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0">
+                        ⛸️
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">꽁꽁 스케이트 & 썰매</h3>
+                        <p class="text-sm text-sky-100">빙판 위를 가르는 짜릿한 속도감!</p>
+                    </div>
+                </div>
+                <!-- Activity 2 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center transform transition hover:scale-105 duration-300">
+                    <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0">
+                        🐟
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">빙어 낚시 체험</h3>
+                        <p class="text-sm text-sky-100">직접 잡은 빙어 튀김도 먹어보자!</p>
+                    </div>
+                </div>
+                <!-- Activity 3 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center transform transition hover:scale-105 duration-300">
+                    <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0">
+                        🍢
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">겨울 먹거리 장터</h3>
+                        <p class="text-sm text-sky-100">뜨끈한 어묵국물과 군밤의 유혹</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 하단 안내 -->
+        <footer class="px-6 pb-12 text-center reveal">
+            <div class="bg-white/10 rounded-xl p-6 border border-white/20">
+                <i class="fas fa-bullhorn text-3xl mb-3 text-yellow-300"></i>
+                <h3 class="text-xl font-bold mb-2">꼭 확인해주세요!</h3>
+                <p class="text-sm mb-4 leading-relaxed">
+                    출발 전 <span class="text-yellow-300 font-bold">30분간 짧은 예배</span>(말씀과 기도)가 있습니다.<br>
+                    늦지 않게 10시까지 꼭 도착해주세요! 🙏
+                </p>
+                <div class="mt-4 pt-4 border-t border-white/10">
+                    <p class="text-xs text-gray-400">문의: 학생회장 (010-XXXX-XXXX)</p>
+                </div>
+            </div>
+            <p class="mt-8 text-xs text-blue-200 opacity-60">Designed for 2025 Student Council</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // 눈 내리는 효과 스크립트
+        function createSnowflakes() {
+            const container = document.getElementById('snow-container');
+            const snowflakeCount = 50; // 눈송이 개수
+
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('i');
+                snowflake.classList.add('fas', 'fa-snowflake', 'snowflake');
+                
+                // 랜덤 위치 및 속성 설정
+                const left = Math.random() * 100;
+                const animDuration = Math.random() * 5 + 5 + 's'; // 5~10초
+                const animDelay = Math.random() * 5 + 's';
+                const size = Math.random() * 15 + 10 + 'px'; // 10~25px
+                const opacity = Math.random() * 0.5 + 0.3;
+
+                snowflake.style.left = left + '%';
+                snowflake.style.animationDuration = animDuration;
+                snowflake.style.animationDelay = animDelay;
+                snowflake.style.fontSize = size;
+                snowflake.style.opacity = opacity;
+
+                container.appendChild(snowflake);
+            }
+        }
+
+        // 스크롤 시 요소 나타나는 효과 (Intersection Observer)
+        function setupIntersectionObserver() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            reveals.forEach(reveal => {
+                observer.observe(reveal);
+            });
+        }
+
+        // 초기화
+        window.onload = function() {
+            createSnowflakes();
+            setupIntersectionObserver();
+        };
+    </script>
+</body>
+</html>
