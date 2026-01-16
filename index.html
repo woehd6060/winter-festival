@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학생회 동계 야유회: 영양 꽁꽁 축제</title>
+    <title>학생회 동계 야유회: 영양 꽁꽁 겨울축제</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
@@ -40,6 +40,7 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            transition: transform 0.3s ease, background 0.3s ease;
         }
 
         /* 스크롤 애니메이션 클래스 */
@@ -63,6 +64,41 @@
             background: rgba(255,255,255,0.3);
             transform: translateX(-50%);
         }
+
+        /* 링크 카드 호버 효과 */
+        a.glass-card:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* 지도 애니메이션 */
+        .map-pin {
+            animation: bounce-pin 2s infinite;
+        }
+        @keyframes bounce-pin {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* 텐트 스트라이프 패턴 */
+        .tent-pattern {
+            background: repeating-linear-gradient(
+              45deg,
+              #ff6b6b,
+              #ff6b6b 10px,
+              #ffffff 10px,
+              #ffffff 20px
+            );
+        }
+        .tent-pattern-orange {
+            background: repeating-linear-gradient(
+              45deg,
+              #f97316,
+              #f97316 10px,
+              #ffffff 10px,
+              #ffffff 20px
+            );
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-900 text-white min-h-screen relative">
@@ -74,51 +110,55 @@
         
         <!-- 헤더 섹션 -->
         <header class="pt-16 pb-10 text-center px-6 reveal active">
-            <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-white/40 animate-bounce">
-                ❄️ 2025 학생회 동계 야유회 ❄️
+            <div class="inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-white/40 shadow-lg">
+                ❄️ 영양 꽁꽁 겨울축제와 함께하는 ❄️
             </div>
-            <h1 class="text-5xl md:text-6xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-sky-100 drop-shadow-lg">
-                영양<br>꽁꽁 축제
+            <h1 class="text-5xl md:text-6xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-sky-100 drop-shadow-lg leading-tight font-display">
+                2026 정금교회<br>학생회 동계 야유회
             </h1>
-            <p class="text-xl text-sky-100 mt-4 font-light">
-                우리 함께 떠나는 <span class="font-bold text-white">겨울왕국</span> 여행
-            </p>
+            <div class="text-sky-100 font-light space-y-2">
+                <p class="text-xl">주님의 사랑으로 서로를 녹이는 시간</p>
+                <div class="inline-block border-t border-b border-sky-300/30 py-1 mt-2">
+                    <p class="text-yellow-200 font-bold font-display text-lg">"일어나라 빛을 발하라"</p>
+                    <p class="text-xs text-sky-200 opacity-80">(이사야 60:1-3)</p>
+                </div>
+            </div>
         </header>
 
         <!-- 핵심 정보 카드 -->
         <section class="px-6 mb-12">
             <div class="glass-card rounded-3xl p-6 text-center reveal delay-100">
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                    <div class="p-3 bg-blue-900/40 rounded-2xl border border-white/10">
                         <i class="fas fa-calendar-alt text-2xl mb-2 text-sky-300"></i>
                         <p class="text-sm text-gray-300">날짜</p>
                         <p class="text-lg font-bold">1월 24일 (토)</p>
                     </div>
-                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                    <div class="p-3 bg-blue-900/40 rounded-2xl border border-white/10">
                         <i class="fas fa-clock text-2xl mb-2 text-sky-300"></i>
                         <p class="text-sm text-gray-300">집합 시간</p>
                         <p class="text-lg font-bold">오전 10:00</p>
                     </div>
-                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                    <div class="p-3 bg-blue-900/40 rounded-2xl border border-white/10">
                         <i class="fas fa-map-marker-alt text-2xl mb-2 text-sky-300"></i>
                         <p class="text-sm text-gray-300">장소</p>
                         <p class="text-lg font-bold">영양군 일대</p>
                     </div>
-                    <div class="p-3 bg-blue-900/40 rounded-2xl">
+                    <div class="p-3 bg-blue-900/40 rounded-2xl border border-white/10">
                         <i class="fas fa-won-sign text-2xl mb-2 text-sky-300"></i>
                         <p class="text-sm text-gray-300">참가비</p>
                         <p class="text-lg font-bold">20,000원</p>
                     </div>
                 </div>
                 
-                <!-- 복장 가이드 추가 -->
+                <!-- 복장 가이드 -->
                 <div class="mt-6 pt-4 border-t border-white/20 text-left">
-                    <h3 class="text-sky-300 font-bold mb-3 text-center text-lg"><i class="fas fa-tshirt"></i> 복장 & 준비물 꿀팁!</h3>
-                    <div class="bg-blue-900/40 p-4 rounded-xl text-sm leading-relaxed text-gray-200 shadow-inner">
-                        <p class="mb-2">🥶 <strong>강바람이 쌩쌩~</strong><br>꽁꽁 언 강 위라 생각보다 훨씬 추워요!</p>
-                        <p class="mb-2">🏃‍♂️ <strong>활동하기 편하게!</strong><br>스케이트&썰매 타려면 너무 둔하면 힘들어요.<br>두꺼운 패딩 하나보다는 <span class="text-yellow-300 font-bold">얇은 옷을 여러 겹(레이어드)</span> 입는 걸 추천해요.</p>
+                    <h3 class="text-sky-300 font-bold mb-3 text-center text-lg font-display"><i class="fas fa-tshirt"></i> 따뜻한 겨울나기 꿀팁</h3>
+                    <div class="bg-blue-900/40 p-4 rounded-xl text-sm leading-relaxed text-gray-200 shadow-inner border border-white/5">
+                        <p class="mb-2">🥶 <strong>찬바람 주의!</strong><br>꽁꽁 언 강 위는 생각보다 추워요.</p>
+                        <p class="mb-2">🏃‍♂️ <strong>활동성은 필수!</strong><br>스케이트를 위해 <span class="text-yellow-300 font-bold">얇은 옷을 여러 겹(레이어드)</span> 입고 오세요.</p>
                         <p class="mt-3 pt-2 border-t border-white/10 text-center text-sky-200 font-bold">
-                            ✨ 필수템: 장갑, 귀마개, 핫팩, 따뜻한 양말 ✨
+                            ✨ 필수템: 장갑, 귀마개, 핫팩, 두꺼운 양말 ✨
                         </p>
                     </div>
                 </div>
@@ -127,7 +167,7 @@
 
         <!-- 타임라인 (스케줄) -->
         <section class="px-6 mb-16 relative reveal">
-            <h2 class="text-3xl text-center mb-10 font-display text-shadow">🕐 오늘의 일정</h2>
+            <h2 class="text-3xl text-center mb-10 font-display text-shadow">🕐 함께하는 일정</h2>
             
             <div class="relative">
                 <div class="timeline-line"></div>
@@ -135,8 +175,8 @@
                 <!-- 10:00 집합 -->
                 <div class="relative mb-8 flex items-center w-full">
                     <div class="w-1/2 pr-6 text-right">
-                        <h3 class="text-xl font-bold text-sky-200">집합 및 예배</h3>
-                        <p class="text-sm text-gray-200">마음을 모으는 시간</p>
+                        <h3 class="text-xl font-bold text-sky-200 font-display">집합 및 예배</h3>
+                        <p class="text-sm text-gray-200">마음을 모아 빛을 발하는 시간</p>
                     </div>
                     <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full border-4 border-blue-500 z-10"></div>
                     <div class="w-1/2 pl-6">
@@ -151,7 +191,7 @@
                     </div>
                     <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-300 rounded-full z-10"></div>
                     <div class="w-1/2 pl-6">
-                        <h3 class="text-xl font-bold">영양으로 출발! 🚌</h3>
+                        <h3 class="text-xl font-bold font-display">영양으로 출발! 🚌</h3>
                         <p class="text-sm text-gray-200">김밥 & 생수 제공</p>
                         <p class="text-xs text-sky-200 mt-1">*휴게소 1회 정차</p>
                     </div>
@@ -160,8 +200,8 @@
                 <!-- 13:00 도착 -->
                 <div class="relative mb-8 flex items-center w-full">
                     <div class="w-1/2 pr-6 text-right">
-                        <h3 class="text-xl font-bold">도착 & 점심식사</h3>
-                        <p class="text-sm text-gray-200">맛있는 밥 먹고 힘내자!</p>
+                        <h3 class="text-xl font-bold font-display">도착 & 점심식사</h3>
+                        <p class="text-sm text-gray-200">든든하게 먹고 교제해요</p>
                     </div>
                     <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-300 rounded-full z-10"></div>
                     <div class="w-1/2 pl-6">
@@ -178,7 +218,7 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="w-1/2 pl-6">
-                        <h3 class="text-xl font-bold text-sky-200">자유시간 & 액티비티</h3>
+                        <h3 class="text-xl font-bold text-sky-200 font-display">즐거운 자유시간</h3>
                         <p class="text-sm text-gray-200">스케이트, 썰매, 빙어잡기</p>
                     </div>
                 </div>
@@ -186,7 +226,7 @@
                 <!-- 16:00 복귀 -->
                 <div class="relative flex items-center w-full">
                     <div class="w-1/2 pr-6 text-right">
-                        <h3 class="text-xl font-bold">대구로 출발 🏠</h3>
+                        <h3 class="text-xl font-bold font-display">대구로 출발 🏠</h3>
                         <p class="text-sm text-gray-200">안전하게 귀가해요</p>
                     </div>
                     <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-400 rounded-full z-10"></div>
@@ -197,57 +237,70 @@
             </div>
         </section>
 
-        <!-- 즐길거리 소개 -->
+        <!-- 즐길거리 소개 (수정됨: 링크 변경) -->
         <section class="px-6 mb-16 reveal">
-            <h2 class="text-3xl text-center mb-6 font-display">☃️ 즐길거리 미리보기</h2>
+            <h2 class="text-3xl text-center mb-2 font-display">☃️ 즐길거리 미리보기</h2>
+            <p class="text-center text-sm text-sky-200 mb-6 animate-pulse">👇 아래를 클릭하면 축제 갤러리로 이동해요! 👇</p>
+            
             <div class="space-y-4">
                 <!-- Activity 1 -->
-                <div class="glass-card p-4 rounded-2xl flex items-center transform transition hover:scale-105 duration-300">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0">
+                <a href="https://yywinter.kr/bbs/board.php?bo_table=gallery&page=2" target="_blank" class="glass-card p-4 rounded-2xl flex items-center cursor-pointer group">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0 group-hover:bg-blue-400 transition">
                         ⛸️
                     </div>
-                    <div>
-                        <h3 class="text-xl font-bold">꽁꽁 스케이트 & 썰매</h3>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold group-hover:text-yellow-300 transition font-display">꽁꽁 스케이트 & 썰매 <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h3>
                         <p class="text-sm text-sky-100">빙판 위를 가르는 짜릿한 속도감!</p>
                     </div>
-                </div>
+                    <div class="text-gray-300">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
                 <!-- Activity 2 -->
-                <div class="glass-card p-4 rounded-2xl flex items-center transform transition hover:scale-105 duration-300">
-                    <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0">
+                <a href="https://yywinter.kr/bbs/board.php?bo_table=gallery&page=2" target="_blank" class="glass-card p-4 rounded-2xl flex items-center cursor-pointer group">
+                    <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0 group-hover:bg-indigo-400 transition">
                         🐟
                     </div>
-                    <div>
-                        <h3 class="text-xl font-bold">빙어 낚시 체험</h3>
-                        <p class="text-sm text-sky-100">직접 잡은 빙어 튀김도 먹어보자!</p>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold group-hover:text-yellow-300 transition font-display">빙어 낚시 체험 <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h3>
+                        <p class="text-sm text-sky-100">직접 잡은 빙어 튀김도 별미!</p>
                     </div>
-                </div>
+                    <div class="text-gray-300">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                
                 <!-- Activity 3 -->
-                <div class="glass-card p-4 rounded-2xl flex items-center transform transition hover:scale-105 duration-300">
-                    <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0">
+                <a href="https://yywinter.kr/bbs/board.php?bo_table=gallery&page=2" target="_blank" class="glass-card p-4 rounded-2xl flex items-center cursor-pointer group">
+                    <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center text-3xl shadow-lg mr-4 flex-shrink-0 group-hover:bg-pink-400 transition">
                         🍢
                     </div>
-                    <div>
-                        <h3 class="text-xl font-bold">겨울 먹거리 장터</h3>
-                        <p class="text-sm text-sky-100">뜨끈한 어묵국물과 군밤의 유혹</p>
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold group-hover:text-yellow-300 transition font-display">겨울 먹거리 장터 <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h3>
+                        <p class="text-sm text-sky-100">뜨끈한 어묵국물과 군밤</p>
                     </div>
-                </div>
+                    <div class="text-gray-300">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
             </div>
         </section>
 
-        <!-- 하단 안내 -->
+        <!-- 하단 안내 (수정됨: 문의처) -->
         <footer class="px-6 pb-12 text-center reveal">
             <div class="bg-white/10 rounded-xl p-6 border border-white/20">
                 <i class="fas fa-bullhorn text-3xl mb-3 text-yellow-300"></i>
-                <h3 class="text-xl font-bold mb-2">꼭 확인해주세요!</h3>
-                <p class="text-sm mb-4 leading-relaxed">
-                    출발 전 <span class="text-yellow-300 font-bold">30분간 짧은 예배</span>(말씀과 기도)가 있습니다.<br>
-                    늦지 않게 10시까지 꼭 도착해주세요! 🙏
+                <h3 class="text-xl font-bold mb-2 font-display">필독 사항</h3>
+                <p class="text-sm mb-4 leading-relaxed text-gray-100">
+                    출발 전 <span class="text-yellow-300 font-bold">30분간 짧은 예배</span>가 있습니다.<br>
+                    은혜로운 출발을 위해 10시까지 꼭 도착해주세요! 🙏
                 </p>
                 <div class="mt-4 pt-4 border-t border-white/10">
-                    <p class="text-xs text-gray-400">문의: 학생회장 (010-XXXX-XXXX)</p>
+                    <p class="text-sm text-sky-200 font-bold">문의: 010-7928-6060</p>
                 </div>
             </div>
-            <p class="mt-8 text-xs text-blue-200 opacity-60">Designed for 2025 Student Council</p>
+            <p class="mt-8 text-xs text-blue-200 opacity-60">Designed by leezedo</p>
         </footer>
 
     </main>
@@ -256,17 +309,16 @@
         // 눈 내리는 효과 스크립트
         function createSnowflakes() {
             const container = document.getElementById('snow-container');
-            const snowflakeCount = 50; // 눈송이 개수
+            const snowflakeCount = 50; 
 
             for (let i = 0; i < snowflakeCount; i++) {
                 const snowflake = document.createElement('i');
                 snowflake.classList.add('fas', 'fa-snowflake', 'snowflake');
                 
-                // 랜덤 위치 및 속성 설정
                 const left = Math.random() * 100;
-                const animDuration = Math.random() * 5 + 5 + 's'; // 5~10초
+                const animDuration = Math.random() * 5 + 5 + 's'; 
                 const animDelay = Math.random() * 5 + 's';
-                const size = Math.random() * 15 + 10 + 'px'; // 10~25px
+                const size = Math.random() * 15 + 10 + 'px'; 
                 const opacity = Math.random() * 0.5 + 0.3;
 
                 snowflake.style.left = left + '%';
@@ -279,7 +331,7 @@
             }
         }
 
-        // 스크롤 시 요소 나타나는 효과 (Intersection Observer)
+        // 스크롤 시 요소 나타나는 효과
         function setupIntersectionObserver() {
             const reveals = document.querySelectorAll('.reveal');
 
@@ -298,7 +350,6 @@
             });
         }
 
-        // 초기화
         window.onload = function() {
             createSnowflakes();
             setupIntersectionObserver();
